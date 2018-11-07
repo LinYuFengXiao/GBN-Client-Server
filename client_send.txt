@@ -1,0 +1,67 @@
+   The Hypertext Transfer Protocol (HTTP) is an application-level
+   protocol for distributed, collaborative, hypermedia information
+   systems. HTTP has been in use by the World-Wide Web global
+   information initiative since 1990. The first version of HTTP,
+   referred to as HTTP/0.9, was a simple protocol for raw data transfer
+   across the Internet. HTTP/1.0, as defined by RFC 1945 [6], improved
+   the protocol by allowing messages to be in the format of MIME-like
+   messages, containing metainformation about the data transferred and
+   modifiers on the request/response semantics. However, HTTP/1.0 does
+   not sufficiently take into consideration the effects of hierarchical
+   proxies, caching, the need for persistent connections, or virtual
+   hosts. In addition, the proliferation of incompletely-implemented
+   applications calling themselves "HTTP/1.0" has necessitated a
+   protocol version change in order for two communicating applications
+   to determine each other's true capabilities.
+
+   This specification defines the protocol referred to as "HTTP/1.1".
+   This protocol includes more stringent requirements than HTTP/1.0 in
+   order to ensure reliable implementation of its features.
+
+   Practical information systems require more functionality than simple
+   retrieval, including search, front-end update, and annotation. HTTP
+   allows an open-ended set of methods and headers that indicate the
+   purpose of a request [47]. It builds on the discipline of reference
+   provided by the Uniform Resource Identifier (URI) [3], as a location
+   (URL) [4] or name (URN) [20], for indicating the resource to which a
+      The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in RFC 2119 [34].
+
+   An implementation is not compliant if it fails to satisfy one or more
+   of the MUST or REQUIRED level requirements for the protocols it
+   implements. An implementation that satisfies all the MUST or REQUIRED
+   level and all the SHOULD level requirements for its protocols is said
+   to be "unconditionally compliant"; one that satisfies all the MUST
+   level requirements but not all the SHOULD level requirements for its
+   protocols is said to be "conditionally compliant."
+
+      resource
+      A network data object or service that can be identified by a URI,
+      as defined in section 3.2. Resources may be available in multiple
+      representations (e.g. multiple languages, data formats, size, and
+      resolutions) or vary in other ways.
+
+   entity
+      The information transferred as the payload of a request or
+      response. An entity consists of metainformation in the form of
+      entity-header fields and content in the form of an entity-body, as
+      described in section 7.
+
+   representation
+      An entity included with a response that is subject to content
+      negotiation, as described in section 12. There may exist multiple
+      representations associated with a particular response status.
+
+   content negotiation
+      The mechanism for selecting the appropriate representation when
+      servicing a request, as described in section 12. The
+      representation of entities in any response can be negotiated
+      (including error responses).
+
+   variant
+      A resource may have one, or more than one, representation(s)
+      associated with it at any given instant. Each of these
+      representations is termed a `varriant'.  Use of the term `variant'
+      does not necessarily imply that the resource is subject to content
+      negotiation.
